@@ -4,7 +4,6 @@ import { BoxShadow } from 'react-native-shadow'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 const ButtonRounded = props => {
-  console.log(props)
   return (
     <View style={{ alignItems: 'center' }}>
       {props.isSelected && (

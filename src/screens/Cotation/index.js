@@ -1,12 +1,18 @@
 import { Box } from './../../components/Box/index'
 import React, { Component } from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
 import car from '../../../assets/imgs/carIcon.png'
 import moto from '../../../assets/imgs/motoIcon.png'
-class Cotation extends Component {
+import Icon from 'react-native-vector-icons/FontAwesome'
+class Menu extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <TouchableOpacity
+          style={{ position: 'absolute', top: 15, left: 15 }}
+          onPress={() => this.props.navigation.navigate('Home')}>
+          <Icon name="arrow-left" size={20} color="#000" />
+        </TouchableOpacity>
         <View style={styles.header}>
           <Text style={styles.textBackground}> Cotação </Text>
           <Text style={styles.textHeader}> Cotação </Text>
@@ -30,12 +36,14 @@ class Cotation extends Component {
             icon={car}
             style={{ width: 150, height: 150 }}
             name="carro"
-            onPress={() => alert('OI')}
+            onPress={() => this.props.navigation.navigate('NewVistory')}
           />
-          <Box icon={moto} style={{ width: 150, height: 150 }} name="Moto" />
-        </View>
-        <View>
-          <Text> OI </Text>
+          <Box
+            icon={moto}
+            style={{ width: 150, height: 150 }}
+            name="Moto"
+            onPress={() => this.props.navigation.navigate('NewVistory')}
+          />
         </View>
       </View>
     )
@@ -46,6 +54,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
+    marginTop:40,
     width: '100%',
     alignItems: 'center',
   },
@@ -68,4 +77,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default Cotation
+export default Menu

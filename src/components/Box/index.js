@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet, Image, TouchableHighlight } from 'react-native'
 import { BoxShadow } from 'react-native-shadow'
-const shadowOpt = {}
 export class Box extends Component {
   render() {
     let icon = this.props.icon

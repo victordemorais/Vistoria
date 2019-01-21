@@ -16,8 +16,8 @@ class Login extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      cpf: '21678025526',
-      password: 'mNVk9?Gr',
+      cpf: '',
+      password: '',
     }
   }
   signIn = () => {
