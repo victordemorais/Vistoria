@@ -17,6 +17,15 @@ import motor from '../../../assets/imgs/PhotosCar/motor.png'
 import portamala from '../../../assets/imgs/PhotosCar/interna.png'
 import fotofull from '../../../assets/imgs/PhotosCar/360.png'
 class PhotosCar extends Component {
+  state = {
+    frontal: '',
+    traseira: '',
+    lateral: '',
+    interna: '',
+    motor: '',
+    portamala: '',
+    full: '',
+  }
   render() {
     return (
       <ScrollView style={{ flex: 1 }}>
@@ -31,19 +40,45 @@ class PhotosCar extends Component {
             Honda Civic
           </Text>
           <View style={styles.rowinput}>
-            <Photos style={styles.photo} image={front} label="Foto Frontal" />
-            <Photos style={styles.photo} image={back} label="Foto Traseira" />
+            <Photos
+              style={styles.photo}
+              image={front}
+              label="Foto Frontal"
+              updateImage={frontal => this.setState({ frontal })}
+            />
+            <Photos
+              style={styles.photo}
+              image={back}
+              label="Foto Traseira"
+              updateImage={traseira => this.setState({ traseira })}
+            />
           </View>
           <View style={styles.rowinput}>
-            <Photos style={styles.photo} image={lateral} label="Foto Lateral" />
-            <Photos style={styles.photo} image={interna} label="Foto Interna" />
+            <Photos
+              style={styles.photo}
+              image={lateral}
+              label="Foto Lateral"
+              updateImage={lateral => this.setState({ lateral })}
+            />
+            <Photos
+              style={styles.photo}
+              image={interna}
+              label="Foto Interna"
+              updateImage={interna => this.setState({ interna })}
+            />
           </View>
           <View style={styles.rowinput}>
-            <Photos style={styles.photo} image={motor} label="Foto do Motor" />
+            <Photos
+              style={styles.photo}
+              image={motor}
+              label="Foto do Motor"
+              updateImage={motor => this.setState({ motor })}
+            />
             <Photos
               style={styles.photo}
               image={portamala}
               label="Foto Porta Mala"
+              updateImage={portamala => this.setState({ portamala })}
             />
           </View>
           <View style={styles.rowinput}>
@@ -52,6 +87,7 @@ class PhotosCar extends Component {
               image={fotofull}
               label="Foto 360 º"
               cem
+              updateImage={full => this.setState({ full })}
             />
           </View>
           <View style={{ width: '50%' }}>

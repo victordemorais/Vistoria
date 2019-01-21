@@ -46,15 +46,9 @@ export default class Photos extends React.Component {
 
   render() {
     return (
-      <View style={[styles.container, this.props.style,
-            ]}>
+      <View style={[styles.container, this.props.style]}>
         <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
-          <View
-            style={[
-              styles.avatar,
-              styles.avatarContainer,
-              
-            ]}>
+          <View style={[styles.avatar, styles.avatarContainer]}>
             <Text
               style={{
                 color: '#c9c9c9',
@@ -64,14 +58,21 @@ export default class Photos extends React.Component {
               }}>
               {this.props.label}
             </Text>
-            <Image source={this.props.image} />
+
             {this.state.avatarSource === null ? (
-              <View style={{ position: 'absolute', bottom: 5 }}>
-                <Icon name="camera" size={15} color="#4F7BFE" />
+              <View>
+                <Image source={this.props.image} />
+                <View style={{ position: 'absolute', bottom: 5 }}>
+                  <Icon name="camera" size={15} color="#4F7BFE" />
+                </View>
               </View>
             ) : (
               <Image
-                style={[styles.avatar, this.props.stylesCamera,]}
+                style={[
+                  styles.avatarContainer,
+                  styles.avatar,
+                  this.props.stylesCamera,
+                ]}
                 source={this.state.avatarSource}
               />
             )}
@@ -83,8 +84,7 @@ export default class Photos extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-  },
+  container: {},
   avatarContainer: {
     borderWidth: 1,
     borderColor: '#4F7BFE',
